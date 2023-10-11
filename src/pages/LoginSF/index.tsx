@@ -3,7 +3,7 @@ import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import LOGO_IMG from "../../assets/logo.svg";
 import "./style.scss";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 const LoginSF = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const LoginSF = () => {
             <TextBoxComponent
               type="textbox"
               placeholder={"Enter Auth Token"}
-              onChange={(e) => setToken(e.target.value)}
+              onChange={(e: { target: { value: SetStateAction<string>; }; }) => setToken(e.target.value)}
               cssClass={`e-outline custom-form__input  && "e-error"
                                 }`}
               multiline={true}

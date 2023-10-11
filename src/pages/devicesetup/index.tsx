@@ -26,28 +26,37 @@ const Login = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const synkHeaders = {
-        Authorization: localStorage.getItem("auth"),
-        "X-Konami-Iop": 10000498,
-        "X-Konami-Session-Timetoexpire": 1696852247174,
-      };
-      const response = await fetch(
-        "https://feqa.kgisystems.com:1550/v1/system/devices/notes/types?limit=-1",
-        {
-          method: "GET",
-          headers: synkHeaders,
-        }
-      );
-
-      const result = await response.json();
-      const dataObj = result?.deviceNoteTypes.map((item: any) => ({
-        ...item,
-        lastModDate: item?.lastModDate ? moment(item.lastModDate).format("YYYY-MM-DD") : item.lastModDate
-      }))
-      setData(dataObj)
+      // Get the authorization token from localStorage
+      const authToken = localStorage.getItem("auth");
+  
+      // Check if authToken is not null before using it in headers
+      if (authToken !== null) {
+        const synkHeaders: Record<string, string> = {
+          Authorization: authToken,
+          "X-Konami-Iop": "10000498", // Convert to string
+          "X-Konami-Session-Timetoexpire": "1696852247174", // Convert to string
+        };
+  
+        const response = await fetch(
+          "https://feqa.kgisystems.com:1550/v1/system/devices/notes/types?limit=-1",
+          {
+            method: "GET",
+            headers: synkHeaders,
+          }
+        );
+  
+        const result = await response.json();
+        const dataObj = result?.deviceNoteTypes.map((item: any) => ({
+          ...item,
+          lastModDate: item?.lastModDate ? moment(item.lastModDate).format("YYYY-MM-DD") : item.lastModDate
+        }))
+        setData(dataObj)
+      }
     }
+  
     fetchData();
   }, []);
+  
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState, useMemo } from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import {  Outlet, useLocation } from "react-router-dom";
 import Header from "./header";
 import SideBar from "./sidebar";
 import { isEmpty } from "lodash";
@@ -8,7 +8,6 @@ import "./style.scss"
 const LayoutComponent = () => {
     const location = useLocation();
 
-    const menuItems:any  =[ ]
 
     const [pageTilte, setpageTilte] = useState<string>("");
     console.log(pageTilte)
@@ -30,7 +29,7 @@ const LayoutComponent = () => {
     return (
         <>
             <section className="container-wrapper">
-                    <SideBar menuItems={menuItems} />
+                    <SideBar/>
                     <div className={`container-wrapper__innerblk ${!isEmpty(pageTilte) && "hactive"}`}>
                         { pageTilte!=="dashboard" &&<Header title={pageTilte} />}
                         <Suspense fallback={<div>Loading...</div>}>

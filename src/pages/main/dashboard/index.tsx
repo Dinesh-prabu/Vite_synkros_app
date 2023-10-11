@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useContext } from "react";
+import { useEffect, useCallback } from "react";
 import moment from "moment";
 import LOGO_IMG from "../../../assets/logo.svg";
 import "./style.scss";

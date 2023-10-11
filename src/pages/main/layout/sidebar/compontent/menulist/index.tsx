@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { TIconbar } from "../../sidebar.type";
+import {  map } from "lodash";
+
 import './style.scss';
 
 const Icons: TIconbar[] = [
@@ -34,7 +35,8 @@ const Icons: TIconbar[] = [
     }
 ];
 
-const Iconbar = () => {
+const Iconbar = (props:any) => {
+
     const { handleSideBarView, isActive } = props;
 
     return (
@@ -57,11 +59,7 @@ const Iconbar = () => {
                     )
                 })}
             </ul>
-            {/* <ul className="under-list">
-                <li className="logout" onClick={handleLogout}>
-                    {empImageObj ? (!show ? <img src={`${empImageObj?.images[0]?.imageURL}.jpg`} alt="" onError={defaultImage} /> : employeeObj?.loginName?.slice(0, 2)) : (employeeObj && employeeObj?.loginName?.slice(0, 2))}
-                </li>
-            </ul> */}
+           
 
         </>
     );

@@ -1,0 +1,14 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-on-primary);
+    font-family: var(--font-family-regular);
+    font-size: var(--body-font-size);
+    line-height: 24px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1366px;
+    padding: 0 15px;
+    width: 100%;
+}

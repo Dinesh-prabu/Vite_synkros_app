@@ -1,0 +1,27 @@
+@import '../../../scss/mixins';
+
+.container-wrapper {
+    @include display-flex(flex);
+    background-color: var(--bg-color);
+    background-image: url('~assets/images/pattern_background.png');
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-left: 70px;
+    
+    overflow: hidden;
+    &__innerblk{
+        @include display-flex(flex);
+        position: relative;
+        padding: 0 20px 20px;
+        width: 100%;
+        transform: inherit !important; margin-left: 0 !important;
+        &.hactive{
+            padding-top: 70px;
+        }
+    }
+}
+.theme-header .dropdown{ 
+    width:200px;
+}

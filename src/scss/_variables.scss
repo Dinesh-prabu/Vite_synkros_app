@@ -1,0 +1,33 @@
+:root {
+    --html-font-size: 100%;
+    --font-family-thin: "YantramanavThin", sans-serif; // 100
+    --font-family-light: "YantramanavLight", sans-serif; // 300
+    --font-family-regular: "YantramanavRegular", sans-serif; // 400
+    --font-family-medium: "YantramanavMedium", sans-serif; // 500
+    --font-family-bold: "YantramanavBold", sans-serif; // 700
+    --font-family-black: "YantramanavBlack", sans-serif; // 900
+    --fluid-width: var(--html-font-size);
+    --body-font-size: 14px;
+    --primary-color: #203352;
+    --secondary-color: #fd8b00;
+    --warning-color: #ffcc41;
+    --error-color: #ff3434;
+    --success-color: #21a67a;
+    --bg-color: #e7eaee;
+    --menu-bg:#f7f7f8;
+    --white-color: #ffffff;
+    --text-on-primary: #333860;
+    --text-on-secondary: #495281;
+    --text-on-teritary: #a0a7be;
+    --disable-color: #c5c9d9;
+    --border-color: #eeeeee;
+    --progress-bar: #b9dffe;
+    --strip-bg: #e2f2ff;
+    --filter-bg: #e8eaef;
+    --status-green: #daffd3;
+    --status-green-text: #3bc424;
+    --status-red: #ffd3d3;
+    --status-red-text: #f56663;
+    --gray-color:#e6e9ec;
+    --favorite-color: #d50606;
+}

@@ -1,0 +1,158 @@
+@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
+    font-family: var(--font-family);
+
+    @if $size {
+        font-size: $size;
+    }
+
+    @if $colour {
+        color: $colour;
+    }
+
+    @if $weight {
+        font-weight: $weight;
+    }
+
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transform-origin ($origin) {
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin float($float) {
+    float: $float;
+}
+
+@mixin opacity-visibility($opacity, $visibility) {
+    opacity: $opacity;
+    visibility: $visibility;
+}
+
+@mixin display-flex($display) {
+    display: -webkit-$display;
+    display: $display;
+}
+
+// Values: row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+    flex-direction: $direction;
+}
+
+// Values: nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+    flex-wrap: $wrap;
+}
+
+// Shorthand for flex-direction and flex-wrap.
+@mixin flex-flow($flow) {
+    flex-flow: $flow;
+}
+
+// Accepts an integer
+@mixin order($order) {
+    -webkit-order: $order;
+    order: $order;
+}
+
+// Shorthand for flex-grow, flex-shrink and optionally flex-basis.
+// Space separated, in that order.
+@mixin flex($flex) {
+    -ms-flex: $flex;
+    flex: $flex;
+}
+
+// Accepts a number.
+@mixin flex-grow($flex-grow) {
+    flex-grow: $flex-grow;
+}
+
+// Accepts a number.
+@mixin flex-shrink($flex-shrink) {
+    flex-shrink: $flex-shrink;
+}
+
+// Accepts any legal value for the width property.
+@mixin flex-basis($flex-basis) {
+    flex-basis: $flex-basis;
+}
+
+// Legal values: flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify-content) {
+    justify-content: $justify-content;
+}
+
+// Legal values: flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align-items) {
+    align-items: $align-items;
+}
+
+// Legal values: auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align-self) {
+    align-self: $align-self;
+}
+
+// Legal values: flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align-content) {
+    align-content: $align-content;
+}
+
+@mixin display-grid($align-content) {
+    display: -ms-grid;
+    display: $align-content;
+}
+
+// Legal values: pixels | auto | repeat
+@mixin grid-template-columns($align-content-1, $align-content-2, $align-content-3, $align-content-4) {
+    grid-template-columns: $align-content-1 $align-content-2 $align-content-3 $align-content-4 ;
+}

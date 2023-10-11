@@ -1,0 +1,176 @@
+@import '../../../../scss/mixins';
+
+.aside {
+    @include display-flex(flex);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include position(fixed, $left:0);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    height: 100vh;
+    z-index: 1001;
+
+    ul {
+        width: 70px;
+    }
+
+    .icon-bar {
+        .header__logo {
+            border-bottom: 1px solid var(--white-color);
+        }
+    }
+
+    li {
+        text-align: center;
+        font-size: 22px;
+        a {
+            @include display-flex(flex);
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            color: var(--white-color);
+            height: 60px;
+            padding: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            i {
+                font-style: normal !important;
+                font-family: "SynkrosIcons";
+            }
+
+            span {
+                font-size: calc(var(--body-font-size) - 4px);
+                line-height: 16px;
+            }
+
+            &:hover, &:active,  &.is-active {
+                background: var(--menu-bg);
+                color: var(--primary-color);
+                i{
+                    font-size: 30px;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        &:first-child {
+            border-bottom: 1px solid var(--white-color);
+
+            a {
+                height: 58px;
+
+                &:hover {
+                    background: none;
+                    color: var(--white-color);
+                    i{
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+
+    .icon-synkros-logo-icon {
+        font-size: 32px
+    }
+
+    .under-list {
+        @include display-flex(flex);
+        @include flex-direction(column);
+        li {
+            @include display-flex(flex);
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            text-align: center;
+            padding: 5px;
+            transition: all .3s ease;
+            font-size: 22px;
+            text-decoration: none;
+
+            img {
+                @include display-flex(flex);
+                @include flex-direction(column);
+                @include justify-content(flex-end);
+                @include align-items(center);
+                border-radius: 50%;
+            }
+            &:hover{
+                background-color: var(--menu-bg);
+                color: var(--primary-color);
+            }
+        }
+
+    }
+}
+
+.menu__header {
+    padding: 12px;
+    font-size: 20px;
+    .header__title {
+        border-bottom: 1px solid var(--disable-color);
+        padding: 10px 0;
+        margin-bottom: 10px
+    }
+    .menu__category {
+        @include display-flex(flex);
+        @include align-items(center);
+        gap: 10px;
+        font-size: 10px;
+
+        .e-switch-wrapper {
+            @include width-height(42px, 22px);
+
+            .e-switch-handle {
+                &.e-switch-active {
+                    background: var(--white-color);
+                }
+            }
+
+            &.custom__category {
+                .e-switch-inner {
+                    &.e-switch-active {
+                        .e-switch-on {
+                            background: var(--toggle-color);
+                            border-color: var(--toggle-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .nav-item {
+        @include display-flex(flex);
+        @include align-items(center);
+        @include justify-content(space-between);
+        border-bottom: 1px solid #c5c9d9;
+        cursor: pointer;
+        padding: 10px 0;
+        font-family: var(--font-family-bold);
+        font-size: calc(var(--body-font-size) - 1px);
+        &:last-child{
+            border-bottom: none
+        }
+    }
+    .menu-item{
+        @include display-flex(flex);
+        @include align-items(center);
+        i{
+            padding-right: 10px;
+        }
+    }
+    .favorite-item{
+        @include display-flex(flex);
+        @include align-items(center);
+        min-height: 36px;
+        width: 200px;
+        cursor: pointer;
+        color: inherit;
+        i,div{
+            position: absolute;
+            right: 10px;  
+        }
+    }
+}
+
+

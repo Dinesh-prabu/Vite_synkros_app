@@ -1,0 +1,132 @@
+@import "reset";
+@import "common";
+@import "fonts";
+@import "variables";
+@import "typo";
+@import "grid";
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    touch-action: manipulation;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    overscroll-behavior-y: none;
+    text-size-adjust: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+textarea {
+    font-family: var(--font-family);
+    resize: none;
+}
+
+input:disabled,
+textarea:disabled {
+    opacity: 0.8;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: var(--body-font-size);
+    color: var(--disable-color);
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: var(--body-font-size);
+    color: var(--disable-color);
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: var(--body-font-size);
+    color: var(--disable-color);
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: var(--body-font-size);
+    color: var(--disable-color);
+}
+
+input:disabled::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: var(--disable-color);
+}
+
+input:disabled:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: var(--disable-color);
+}
+
+input:disabled::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: var(--disable-color);
+}
+
+input:disabled:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: var(--disable-color);
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.scroll-bar {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: var(--border-color);
+    }
+}
+
+.e-control, .e-css{
+    font-family: inherit;
+}
